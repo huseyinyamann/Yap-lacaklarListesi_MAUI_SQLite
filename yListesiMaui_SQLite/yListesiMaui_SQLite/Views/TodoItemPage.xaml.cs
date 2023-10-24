@@ -6,7 +6,6 @@ namespace yListesiMaui_SQLite.Views;
 [QueryProperty("Item", "Item")]
 public partial class TodoItemPage : ContentPage
 {
-    TodoItem item;
     public TodoItem Item
     {
         get => BindingContext as TodoItem;
@@ -20,20 +19,28 @@ public partial class TodoItemPage : ContentPage
     }
     private async void OnSave_Clicked(object sender, EventArgs e)
     {
-        if(string.IsNullOrWhiteSpace(item.Name))
+        try
         {
-            await DisplayAlert("Name Required", "Please enter a name for the todo item.", "ok");
-            return;
-        }
+            var s = Item;
+            if (string.IsNullOrWhiteSpace(Item.Name))
+            {
+                await DisplayAlert("Name Required", "Please enter a name for the todo item.", "ok");
+                return;
+            }
 
-        await database.SaveItemAsync(item);
-        await Shell.Current.GoToAsync("..");
+            await database.SaveItemAsync(Item);
+            await Shell.Current.GoToAsync("..");
+        }catch (Exception ex)
+        {
+            await DisplayAlert("",ex.Message, "tamam");
+        }
+        
     }
     async void OnDelete_Clicked(object sender, EventArgs e)
     {
-        if (item.ID == 0)
+        if (Item.ID == 0)
             return;
-        await database.DeleteItemAsync(item);
+        await database.DeleteItemAsync(Item);
         await Shell.Current.GoToAsync("..");
     }
 

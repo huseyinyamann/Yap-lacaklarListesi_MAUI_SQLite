@@ -24,6 +24,8 @@ public partial class TodoListPage : ContentPage
             foreach (var item in items)
                 Items.Add(item);
         });
+
+        var val = myCollect.ItemsSource;
     }
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
@@ -37,7 +39,7 @@ public partial class TodoListPage : ContentPage
     }
     async void OnItemAdded_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(TodoListPage), true, new Dictionary<string, object>
+        await Shell.Current.GoToAsync(nameof(TodoItemPage), true, new Dictionary<string, object>
         {
             ["Item"] = new TodoItem()
         });
