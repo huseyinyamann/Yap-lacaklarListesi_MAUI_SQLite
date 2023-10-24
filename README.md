@@ -1,0 +1,1 @@
+# Yap-lacaklarListesi_MAUI_SQLite
