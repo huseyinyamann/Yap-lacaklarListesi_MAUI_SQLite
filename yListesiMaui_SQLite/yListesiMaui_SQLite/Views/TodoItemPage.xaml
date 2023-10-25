@@ -15,13 +15,13 @@
             <Entry Text="{Binding Notes}"/>
             <Label Text="Yapıldı"/>
             <Switch IsToggled="{Binding Done}"/>
-            <Button Text="Save" 
+            <Button Text="Kaydet" 
                     x:Name="OnSave" 
                     Clicked="OnSave_Clicked"/>
-            <Button Text="Delete" 
+            <Button Text="Sil" 
                     x:Name="OnDelete" 
                     Clicked="OnDelete_Clicked"/>
-            <Button Text="Cancel"
+            <Button Text="Geri"
                     x:Name="OnCancel"
                     Clicked="OnCancel_Clicked"/>
         </VerticalStackLayout>
