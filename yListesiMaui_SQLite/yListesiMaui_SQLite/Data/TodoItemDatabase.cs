@@ -33,7 +33,7 @@ namespace yListesiMaui_SQLite.Data
         public async Task<List<TodoItem>> GetItemsNotDoneAsync()
         {
             await Init();
-            return await Database.Table<TodoItem>().Where(t => t.Done).ToListAsync();
+            return await Database.Table<TodoItem>().ToListAsync();
         }
         public async Task<TodoItem> GetItemAsync(int id)
         {

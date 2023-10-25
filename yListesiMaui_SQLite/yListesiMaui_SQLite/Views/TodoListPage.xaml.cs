@@ -7,7 +7,8 @@ namespace yListesiMaui_SQLite.Views;
 public partial class TodoListPage : ContentPage
 {
     TodoItemDatabase database;
-    public ObservableCollection<TodoItem> Items { get; set; } = new();
+    public ObservableCollection<TodoItem> Items { get; set; } = new ObservableCollection<TodoItem>();
+
     public TodoListPage(TodoItemDatabase todoItemDatabase)
     {
         InitializeComponent();

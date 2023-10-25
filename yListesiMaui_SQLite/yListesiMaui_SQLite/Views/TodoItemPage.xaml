@@ -9,11 +9,11 @@
         <VerticalStackLayout Padding="20"
                              Spacing="10"
                              VerticalOptions="StartAndExpand">
-            <Label Text="Name" />
+            <Label Text="Başlık" />
             <Entry Text="{Binding Name}"/>
-            <Label Text="Notes"/>
+            <Label Text="Not"/>
             <Entry Text="{Binding Notes}"/>
-            <Label Text="Done"/>
+            <Label Text="Yapıldı"/>
             <Switch IsToggled="{Binding Done}"/>
             <Button Text="Save" 
                     x:Name="OnSave" 
